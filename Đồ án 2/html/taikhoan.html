@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài khoản - Quạt Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- trangchu.css đang chứa phần dùng chung (reset, header, footer); taikhoan.css chỉ chứa phần riêng -->
+  <link rel="stylesheet" href="../css/trangchu.css">
+  <link rel="stylesheet" href="../css/taikhoan.css">
+</head>
+<body>
+
+<!-- ===== KHỐI 1: HEADER (giống trang chủ) ===== -->
+<header class="header">
+  <div class="container header-row">
+    <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+    <form id="search-form" class="search">
+      <input id="search-input" type="text" placeholder="Bạn muốn tìm quạt gì...">
+      <button type="submit">Tìm</button>
+    </form>
+    <a href="taikhoan.html" id="account-btn" class="btn-outline">Tài khoản</a>
+        <a href="giohang.html" class="btn-cart">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+  </div>
+  <div class="container nav-row">
+    <div class="cat-wrap">
+      <button id="cat-toggle" class="cat-btn">☰ Danh mục sản phẩm</button>
+      <ul id="cat-menu" class="cat-menu"></ul>
+    </div>
+    <nav class="nav">
+      <a href="trangchu.html">Trang chủ</a>
+      <a href="sanpham.html">Tất cả sản phẩm</a>
+      <a href="chonphong.html">Chọn quạt theo phòng</a>
+      <a href="lienhe.html">Liên hệ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container account-page">
+
+  <!-- ===== KHỐI 2: ĐĂNG NHẬP / ĐĂNG KÝ (hiện khi CHƯA đăng nhập) ===== -->
+  <section id="auth-box" class="card">
+    <div class="tabs">
+      <button id="tab-login" class="tab active" type="button">Đăng nhập</button>
+      <button id="tab-register" class="tab" type="button">Đăng ký</button>
+    </div>
+
+    <form id="login-form" class="form">
+      <label>Email <input id="login-email" type="email" required></label>
+      <label>Mật khẩu <input id="login-pass" type="password" required></label>
+      <p id="login-msg" class="msg"></p>
+      <button type="submit" class="btn-main">Đăng nhập</button>
+      <p class="hint">Tài khoản quản trị thử nghiệm: admin@quatshop.vn / admin123</p>
+    </form>
+
+    <form id="register-form" class="form hidden">
+      <label>Họ và tên <input id="reg-name" type="text" required></label>
+      <label>Email <input id="reg-email" type="email" required></label>
+      <label>Số điện thoại <input id="reg-phone" type="tel" required></label>
+      <label>Mật khẩu (tối thiểu 6 ký tự) <input id="reg-pass" type="password" required></label>
+      <label>Nhập lại mật khẩu <input id="reg-pass2" type="password" required></label>
+      <p id="reg-msg" class="msg"></p>
+      <button type="submit" class="btn-main">Tạo tài khoản</button>
+    </form>
+  </section>
+
+  <!-- ===== KHỐI 3: THÔNG TIN TÀI KHOẢN (hiện khi ĐÃ đăng nhập) ===== -->
+  <section id="profile-box" class="card hidden">
+    <div class="profile-head">
+      <div id="avatar" class="avatar">?</div>
+      <div>
+        <h2 id="profile-name"></h2>
+        <p id="profile-role" class="role"></p>
+      </div>
+    </div>
+    <form id="profile-form" class="form">
+      <label>Họ và tên <input id="pf-name" type="text" required></label>
+      <label>Email <input id="pf-email" type="email" readonly></label>
+      <label>Số điện thoại <input id="pf-phone" type="tel" required></label>
+      <label>Địa chỉ giao hàng <input id="pf-address" type="text"></label>
+      <p id="pf-msg" class="msg"></p>
+      <button type="submit" class="btn-main">Lưu thay đổi</button>
+    </form>
+    <div class="profile-actions">
+      <a id="admin-link" href="quantri.html" class="link-more hidden">Vào trang quản trị</a>
+      <button id="logout-btn" class="btn-logout" type="button">Đăng xuất</button>
+    </div>
+  </section>
+</main>
+
+<!-- ===== KHỐI 4: FOOTER (giống trang chủ) ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+      <p>Cửa hàng quạt dân dụng và công nghiệp chính hãng, giao hàng toàn quốc, bảo hành rõ ràng.</p>
+    </div>
+    <div><h4>Chính sách</h4><ul>
+      <li><a href="gioithieu.html#baohanh">Chính sách bảo hành</a></li><li><a href="gioithieu.html#doitra">Chính sách đổi trả</a></li>
+      <li><a href="gioithieu.html#vanchuyen">Chính sách vận chuyển</a></li><li><a href="gioithieu.html#baomat">Chính sách bảo mật</a></li></ul></div>
+    <div><h4>Hỗ trợ khách hàng</h4><ul>
+      <li><a href="gioithieu.html#muahang">Hướng dẫn mua hàng</a></li><li><a href="gioithieu.html#thanhtoan">Hình thức thanh toán</a></li>
+      <li><a href="gioithieu.html#tracuu">Tra cứu đơn hàng</a></li><li><a href="gioithieu.html#faq">Câu hỏi thường gặp</a></li></ul></div>
+    <div><h4>Liên hệ</h4><ul>
+      <li>Hotline: 0903 000 000</li><li>Email: quatshop@example.com</li><li>Địa chỉ: Hưng Yên</li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Quạt Shop – Đồ án 2, Trường ĐH Sư phạm Kỹ thuật Hưng Yên. Sinh viên: Đỗ Văn Trọng</p>
+  </div>
+</footer>
+
+<!-- Thứ tự quan trọng: chung.js phải đứng TRƯỚC taikhoan.js -->
+<script src="../jss/chung.js"></script>
+<script src="../jss/taikhoan.js"></script>
+</body>
+</html>

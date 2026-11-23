@@ -1,0 +1,89 @@
+/* ===== KHỐI 1: CHUNG ===== */
+.about-page { padding-top: 32px; }
+.about-page h2 { color: var(--green-900); }
+
+/* ===== KHỐI 2: GIỚI THIỆU CHUNG ===== */
+.about-hero { background: linear-gradient(120deg, #eef7f1 40%, #cfe8d9); border-radius: 20px; padding: 56px 48px; }
+.about-hero h1 { font-size: 40px; line-height: 1.2; color: var(--green-900); max-width: 720px; margin: 8px 0 16px; }
+.about-hero p { max-width: 620px; color: var(--muted); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.btn-ghost { display: inline-block; margin-top: 20px; border: 2px solid var(--green-700); color: var(--green-700); padding: 10px 24px; border-radius: 10px; font-weight: 700; }
+.btn-ghost:hover { background: #fff; }
+
+/* ===== KHỐI 3: CON SỐ ===== */
+.about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+.about-stat { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px; text-align: center; }
+.about-stat b { display: block; font-size: 34px; color: var(--green-700); }
+.about-stat span { color: var(--muted); font-size: 14px; }
+
+/* ===== KHỐI 4: CÂU CHUYỆN + SỨ MỆNH ===== */
+.story { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; align-items: start; }
+.story h2 { font-size: 28px; margin-bottom: 12px; }
+.story p { color: var(--muted); margin-bottom: 12px; }
+.mission { background: var(--green-900); color: #fff; border-radius: 16px; padding: 28px; }
+.mission h3 { font-size: 20px; margin-bottom: 8px; }
+.mission p { color: #cfe6da; margin: 0; }
+
+/* ===== KHỐI 5: GIÁ TRỊ CỐT LÕI ===== */
+.values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.value { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--green-700); border-radius: 14px; padding: 20px; }
+.value b { display: block; margin-bottom: 6px; color: var(--green-900); }
+.value p { color: var(--muted); font-size: 14px; }
+
+/* ===== KHỐI 6: CÂU HỎI THƯỜNG GẶP ===== */
+.faq { display: flex; flex-direction: column; gap: 10px; }
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }
+.faq summary { font-weight: 700; cursor: pointer; }
+.faq details[open] { border-color: var(--green-700); }
+.faq p { margin-top: 10px; color: var(--muted); }
+.faq a { color: var(--green-700); font-weight: 700; }
+
+/* ===== KHỐI 7: THÔNG TIN + LIÊN HỆ ===== */
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.info { background: var(--green-100); border-radius: 14px; padding: 18px 20px; }
+.info span { display: block; color: var(--muted); font-size: 13px; }
+.info b { color: var(--green-900); }
+.cta { margin-top: 24px; background: var(--green-700); color: #fff; border-radius: 16px; padding: 36px; text-align: center; }
+.cta h2 { color: #fff; }
+.cta p { margin: 8px 0; color: #d8f0e3; }
+.cta .btn-main { background: #fff; color: var(--green-900); }
+
+/* ===== KHỐI 8: RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .about-hero { padding: 32px 24px; }
+  .about-hero h1 { font-size: 30px; }
+  .about-stats, .values, .info-grid { grid-template-columns: repeat(2, 1fr); }
+  .story { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .about-stats, .values, .info-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== KHỐI 9: CHÍNH SÁCH VÀ HỖ TRỢ KHÁCH HÀNG ===== */
+#support { scroll-margin-top: 150px; }
+.support { display: grid; grid-template-columns: 240px 1fr; gap: 20px; align-items: start; }
+.topics { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; }
+.topics .group { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; padding: 8px 10px 4px; }
+.topic-btn { text-align: left; border: 0; background: transparent; padding: 9px 12px; border-radius: 8px; font: inherit; color: var(--ink); cursor: pointer; }
+.topic-btn:hover { background: var(--green-100); }
+.topic-btn.active { background: var(--green-700); color: #fff; font-weight: 700; }
+.topic-content { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; min-height: 280px; }
+.topic-panel { display: none; }
+.topic-panel.active { display: block; }
+.topic-panel h3 { color: var(--green-900); margin-bottom: 12px; }
+.topic-panel ul, .topic-panel ol { padding-left: 20px; }
+.topic-panel ul { list-style: disc; }
+.topic-panel li { margin-bottom: 8px; color: var(--muted); }
+.topic-panel a { color: var(--green-700); font-weight: 700; }
+.track-form { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.track-form input { flex: 1; min-width: 160px; border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font: inherit; outline: none; }
+.track-form input:focus { border-color: var(--green-700); }
+.track-form .btn-main { margin-top: 0; border: 0; cursor: pointer; font: inherit; font-weight: 700; }
+.track-result { margin-top: 14px; white-space: pre-line; }
+.track-result.ok { background: var(--green-100); border-radius: 10px; padding: 14px 16px; color: var(--green-900); }
+.track-result.err { color: #c1121f; }
+@media (max-width: 900px) {
+  .support { grid-template-columns: 1fr; }
+  .topics { flex-direction: row; flex-wrap: wrap; }
+  .topics .group { width: 100%; }
+}

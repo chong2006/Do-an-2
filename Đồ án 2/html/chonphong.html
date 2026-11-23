@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chọn quạt theo phòng - Quạt Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- trangchu.css chứa phần dùng chung (reset, header, footer, thẻ sản phẩm); chonphong.css chỉ chứa phần riêng -->
+  <link rel="stylesheet" href="../css/trangchu.css">
+  <link rel="stylesheet" href="../css/chonphong.css">
+</head>
+<body>
+
+<!-- ===== KHỐI 1: HEADER (giống trang chủ) ===== -->
+<header class="header">
+  <div class="container header-row">
+    <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+    <form id="search-form" class="search">
+      <input id="search-input" type="text" placeholder="Bạn muốn tìm quạt gì...">
+      <button type="submit">Tìm</button>
+    </form>
+    <a href="taikhoan.html" id="account-btn" class="btn-outline">Tài khoản</a>
+    <a href="giohang.html" class="btn-cart">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+  </div>
+  <div class="container nav-row">
+    <div class="cat-wrap">
+      <button id="cat-toggle" class="cat-btn">☰ Danh mục sản phẩm</button>
+      <ul id="cat-menu" class="cat-menu"></ul>
+    </div>
+    <nav class="nav">
+      <a href="trangchu.html">Trang chủ</a>
+      <a href="sanpham.html">Tất cả sản phẩm</a>
+      <a href="chonphong.html" class="active">Chọn quạt theo phòng</a>
+      <a href="lienhe.html">Liên hệ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container room-page">
+  <h1 class="page-title">Chọn quạt theo phòng</h1>
+  <p class="muted">Chọn loại không gian và diện tích, Quạt Shop sẽ gợi ý dòng quạt và công suất phù hợp.</p>
+
+  <!-- ===== KHỐI 2: BƯỚC 1 - CHỌN LOẠI PHÒNG (JS tự đổ dữ liệu) ===== -->
+  <section class="step">
+    <h2><span class="num">1</span> Bạn cần làm mát ở đâu?</h2>
+    <div id="room-list" class="room-grid"></div>
+  </section>
+
+  <!-- ===== KHỐI 3: BƯỚC 2 - CHỌN DIỆN TÍCH ===== -->
+  <section class="step">
+    <h2><span class="num">2</span> Diện tích khoảng bao nhiêu?</h2>
+    <div class="area-box">
+      <input id="area" type="range" min="5" max="200" value="20">
+      <div class="area-val"><b id="area-text">20</b> m²</div>
+    </div>
+  </section>
+
+  <!-- ===== KHỐI 4: LỜI KHUYÊN (hiện sau khi chọn phòng) ===== -->
+  <section id="advice" class="advice hidden">
+    <h3 id="advice-title"></h3>
+    <p id="advice-text"></p>
+    <p id="advice-power"></p>
+  </section>
+
+  <!-- ===== KHỐI 5: BƯỚC 3 - SẢN PHẨM GỢI Ý ===== -->
+  <section class="step">
+    <h2><span class="num">3</span> Sản phẩm gợi ý</h2>
+    <p id="hint" class="hint-box">Hãy chọn loại phòng ở bước 1 để xem gợi ý.</p>
+    <div id="product-list" class="product-grid"></div>
+  </section>
+</main>
+
+<!-- Thông báo nhỏ "Đã thêm vào giỏ hàng" -->
+<div id="toast" class="toast"></div>
+
+<!-- ===== KHỐI 6: FOOTER (giống trang chủ) ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+      <p>Cửa hàng quạt dân dụng và công nghiệp chính hãng, giao hàng toàn quốc, bảo hành rõ ràng.</p>
+    </div>
+    <div><h4>Chính sách</h4><ul>
+      <li><a href="gioithieu.html#baohanh">Chính sách bảo hành</a></li><li><a href="gioithieu.html#doitra">Chính sách đổi trả</a></li>
+      <li><a href="gioithieu.html#vanchuyen">Chính sách vận chuyển</a></li><li><a href="gioithieu.html#baomat">Chính sách bảo mật</a></li></ul></div>
+    <div><h4>Hỗ trợ khách hàng</h4><ul>
+      <li><a href="gioithieu.html#muahang">Hướng dẫn mua hàng</a></li><li><a href="gioithieu.html#thanhtoan">Hình thức thanh toán</a></li>
+      <li><a href="gioithieu.html#tracuu">Tra cứu đơn hàng</a></li><li><a href="gioithieu.html#faq">Câu hỏi thường gặp</a></li></ul></div>
+    <div><h4>Liên hệ</h4><ul>
+      <li>Hotline: 0903 000 000</li><li>Email: quatshop@example.com</li><li>Địa chỉ: Hưng Yên</li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Quạt Shop – Đồ án 2, Trường ĐH Sư phạm Kỹ thuật Hưng Yên. Sinh viên: Đỗ Văn Trọng</p>
+  </div>
+</footer>
+
+<!-- Thứ tự quan trọng: chung.js phải đứng TRƯỚC chonphong.js -->
+<script src="../jss/chung.js"></script>
+<script src="../jss/chonphong.js"></script>
+</body>
+</html>

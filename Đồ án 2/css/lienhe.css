@@ -1,0 +1,40 @@
+/* ===== KHỐI 1: CHUNG ===== */
+.hidden { display: none !important; }
+.contact-page { padding-top: 32px; }
+.page-title { font-size: 32px; color: var(--green-900); }
+.muted { color: var(--muted); margin-top: 4px; }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 24px; margin-top: 28px; align-items: start; }
+
+/* ===== KHỐI 2: THÔNG TIN LIÊN HỆ ===== */
+.contact-info { display: flex; flex-direction: column; gap: 12px; }
+.info { background: var(--green-100); border-radius: 14px; padding: 18px 20px; }
+.info span { display: block; color: var(--muted); font-size: 13px; }
+.info b { color: var(--green-900); }
+.tip { color: var(--muted); font-size: 14px; }
+.tip a { color: var(--green-700); font-weight: 700; }
+
+/* ===== KHỐI 3: FORM ===== */
+.contact-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+.cform { display: flex; flex-direction: column; gap: 14px; }
+.cform label { display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 14px; }
+.cform input, .cform select, .cform textarea { border: 1px solid var(--line); border-radius: 8px; padding: 11px 14px; font: inherit; outline: none; width: 100%; }
+.cform input:focus, .cform select:focus, .cform textarea:focus { border-color: var(--green-700); }
+.cform textarea { resize: vertical; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.counter { text-align: right; font-size: 13px; color: var(--muted); margin-top: -8px; }
+.cform .btn-main { border: 0; cursor: pointer; font: inherit; font-weight: 700; margin-top: 0; }
+.msg { min-height: 20px; font-size: 14px; }
+.msg.err { color: #c1121f; }
+.msg.ok { color: var(--green-700); }
+
+/* ===== KHỐI 4: THÔNG BÁO ĐÃ GỬI ===== */
+.sent { text-align: center; padding: 32px 8px; }
+.sent h2 { color: var(--green-700); }
+.sent p { color: var(--muted); margin: 8px 0 4px; }
+.sent .btn-main { border: 0; cursor: pointer; font: inherit; font-weight: 700; }
+
+/* ===== KHỐI 5: RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .row2 { grid-template-columns: 1fr; }
+}

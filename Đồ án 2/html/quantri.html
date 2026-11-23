@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản trị - Quạt Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- trangchu.css chỉ dùng để lấy biến màu và reset; quantri.css chứa giao diện quản trị -->
+  <link rel="stylesheet" href="../css/trangchu.css">
+  <link rel="stylesheet" href="../css/quantri.css">
+</head>
+<body>
+
+<!-- ===== KHỐI 1: THANH TRÊN CÙNG ===== -->
+<header class="admin-top">
+  <a href="trangchu.html" class="logo">Quạt<span>Shop</span> <small>Quản trị</small></a>
+  <div class="top-right">
+    <span id="admin-name"></span>
+    <a href="trangchu.html">Về trang chủ</a>
+    <button id="logout-btn" type="button">Đăng xuất</button>
+  </div>
+</header>
+
+<!-- ===== KHỐI 2: BÁO KHÔNG CÓ QUYỀN (hiện khi chưa đăng nhập admin) ===== -->
+<section id="denied" class="denied hidden">
+  <h2>Bạn không có quyền truy cập</h2>
+  <p>Trang này chỉ dành cho quản trị viên. Hãy đăng nhập bằng tài khoản admin.</p>
+  <a href="taikhoan.html" class="btn-main">Đến trang đăng nhập</a>
+</section>
+
+<div id="admin-app" class="admin-layout hidden">
+
+  <!-- ===== KHỐI 3: MENU BÊN TRÁI ===== -->
+  <aside class="side">
+    <button class="side-btn active" data-section="dashboard" type="button">Tổng quan</button>
+    <button class="side-btn" data-section="products" type="button">Sản phẩm</button>
+    <button class="side-btn" data-section="categories" type="button">Danh mục</button>
+    <button class="side-btn" data-section="orders" type="button">Đơn hàng</button>
+    <button class="side-btn" data-section="users" type="button">Người dùng</button>
+        <button class="side-btn" data-section="contacts" type="button">Liên hệ</button>
+  </aside>
+
+  <main class="content">
+
+    <!-- ===== KHỐI 4: TỔNG QUAN ===== -->
+    <section id="sec-dashboard">
+      <h1>Tổng quan</h1>
+      <div id="stats" class="stats"></div>
+    </section>
+
+    <!-- ===== KHỐI 5: QUẢN LÝ SẢN PHẨM ===== -->
+    <section id="sec-products" class="hidden">
+      <div class="sec-head"><h1>Sản phẩm</h1>
+        <button class="btn-save" data-act="p-add" type="button">+ Thêm sản phẩm</button></div>
+      <div class="table-wrap"><table id="tbl-products"></table></div>
+    </section>
+
+    <!-- ===== KHỐI 6: QUẢN LÝ DANH MỤC ===== -->
+    <section id="sec-categories" class="hidden">
+      <div class="sec-head"><h1>Danh mục</h1></div>
+      <form id="category-form" class="inline-form">
+        <input id="cat-name" type="text" placeholder="Tên danh mục mới" required>
+        <button class="btn-save" type="submit">Thêm</button>
+      </form>
+      <div class="table-wrap"><table id="tbl-categories"></table></div>
+    </section>
+
+    <!-- ===== KHỐI 7: QUẢN LÝ ĐƠN HÀNG ===== -->
+    <section id="sec-orders" class="hidden">
+      <div class="sec-head"><h1>Đơn hàng</h1></div>
+      <div class="table-wrap"><table id="tbl-orders"></table></div>
+    </section>
+
+    <!-- ===== KHỐI 8: QUẢN LÝ NGƯỜI DÙNG ===== -->
+    <section id="sec-users" class="hidden">
+      <div class="sec-head"><h1>Người dùng</h1></div>
+      <div class="table-wrap"><table id="tbl-users"></table></div>
+    </section>
+    
+    <!-- ===== MỤC MỚI: QUẢN LÝ LIÊN HỆ ===== -->
+    <section id="sec-contacts" class="hidden">
+      <div class="sec-head"><h1>Liên hệ</h1></div>
+      <div class="table-wrap"><table id="tbl-contacts"></table></div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== KHỐI 9: HỘP THOẠI (form sản phẩm, chi tiết đơn) + THÔNG BÁO ===== -->
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <div class="modal-head"><h3 id="modal-title"></h3><button id="modal-close" type="button">✕</button></div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+
+<!-- Thứ tự quan trọng: chung.js phải đứng TRƯỚC quantri.js -->
+<script src="../jss/chung.js"></script>
+<script src="../jss/quantri.js"></script>
+</body>
+</html>

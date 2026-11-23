@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu - Quạt Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- trangchu.css chứa phần dùng chung (reset, header, footer, thương hiệu); gioithieu.css chỉ chứa phần riêng -->
+  <link rel="stylesheet" href="../css/trangchu.css">
+  <link rel="stylesheet" href="../css/gioithieu.css">
+</head>
+<body>
+
+<!-- ===== KHỐI 1: HEADER (giống trang chủ) ===== -->
+<header class="header">
+  <div class="container header-row">
+    <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+    <form id="search-form" class="search">
+      <input id="search-input" type="text" placeholder="Bạn muốn tìm quạt gì...">
+      <button type="submit">Tìm</button>
+    </form>
+    <a href="taikhoan.html" id="account-btn" class="btn-outline">Tài khoản</a>
+    <a href="giohang.html" class="btn-cart">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+  </div>
+  <div class="container nav-row">
+    <div class="cat-wrap">
+      <button id="cat-toggle" class="cat-btn">☰ Danh mục sản phẩm</button>
+      <ul id="cat-menu" class="cat-menu"></ul>
+    </div>
+    <nav class="nav">
+      <a href="trangchu.html">Trang chủ</a>
+      <a href="sanpham.html">Tất cả sản phẩm</a>
+      <a href="chonphong.html">Chọn quạt theo phòng</a>
+      <a href="lienhe.html">Liên hệ</a>
+      <a href="gioithieu.html" class="active">Giới thiệu</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container about-page">
+
+  <!-- ===== KHỐI 2: GIỚI THIỆU CHUNG ===== -->
+  <section class="about-hero">
+    <p class="eyebrow">Về Quạt Shop</p>
+    <h1>Làm mát đúng nhu cầu, từ căn phòng nhỏ đến nhà xưởng lớn</h1>
+    <p>Quạt Shop cung cấp quạt dân dụng và quạt công nghiệp chính hãng, giúp bạn chọn đúng loại quạt cho từng không gian sống và làm việc.</p>
+    <div class="hero-actions">
+      <a href="sanpham.html" class="btn-main">Xem sản phẩm</a>
+      <a href="chonphong.html" class="btn-ghost">Chọn quạt theo phòng</a>
+    </div>
+  </section>
+
+  <!-- ===== KHỐI 3: CON SỐ (JS đếm từ dữ liệu thật của cửa hàng) ===== -->
+  <section id="stats" class="about-stats"></section>
+
+  <!-- ===== KHỐI 4: CÂU CHUYỆN + SỨ MỆNH ===== -->
+  <section class="section story">
+    <div>
+      <h2>Câu chuyện của chúng tôi</h2>
+      <p>Mỗi căn phòng, mỗi quán ăn hay nhà xưởng đều có nhu cầu làm mát khác nhau. Quạt Shop ra đời với mong muốn giúp khách hàng không phải đoán mò khi mua quạt: chọn đúng dòng, đúng công suất, đúng ngân sách.</p>
+      <p>Cửa hàng tập trung vào các thương hiệu quen thuộc, thông tin sản phẩm rõ ràng và quy trình đặt hàng đơn giản, từ lúc chọn quạt đến khi nhận hàng tại nhà.</p>
+    </div>
+    <div class="mission">
+      <h3>Sứ mệnh</h3>
+      <p>Mang đến giải pháp làm mát phù hợp, tiết kiệm điện và bền bỉ cho mọi gia đình và doanh nghiệp.</p>
+    </div>
+  </section>
+
+  <!-- ===== KHỐI 5: GIÁ TRỊ CỐT LÕI ===== -->
+  <section class="section">
+    <div class="section-head"><h2>Vì sao chọn Quạt Shop</h2></div>
+    <div class="values">
+      <div class="value"><b>Hàng chính hãng</b><p>Sản phẩm từ các thương hiệu uy tín, thông tin công suất rõ ràng.</p></div>
+      <div class="value"><b>Giao hàng toàn quốc</b><p>Đặt hàng online, nhận hàng tại nhà, thanh toán khi nhận hàng hoặc chuyển khoản.</p></div>
+      <div class="value"><b>Bảo hành rõ ràng</b><p>Bảo hành chính hãng theo chính sách của nhà sản xuất.</p></div>
+      <div class="value"><b>Tư vấn tận tâm</b><p>Công cụ chọn quạt theo phòng và đội ngũ hỗ trợ qua hotline.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== KHỐI 6: THƯƠNG HIỆU (JS tự đổ dữ liệu) ===== -->
+  <section class="section">
+    <div class="section-head"><h2>Thương hiệu đang kinh doanh</h2></div>
+    <div id="brand-list" class="brand-row"></div>
+  </section>
+
+    <!-- ===== KHỐI 7: CHÍNH SÁCH VÀ HỖ TRỢ KHÁCH HÀNG ===== -->
+  <section id="support" class="section">
+    <div class="section-head"><h2>Chính sách và hỗ trợ khách hàng</h2></div>
+    <div class="support">
+
+      <!-- Danh sách chủ đề: bấm để đổi nội dung bên phải -->
+      <div class="topics">
+        <p class="group">Chính sách</p>
+        <button class="topic-btn active" data-topic="baohanh" type="button">Bảo hành</button>
+        <button class="topic-btn" data-topic="doitra" type="button">Đổi trả</button>
+        <button class="topic-btn" data-topic="vanchuyen" type="button">Vận chuyển</button>
+        <button class="topic-btn" data-topic="baomat" type="button">Bảo mật</button>
+        <p class="group">Hỗ trợ</p>
+        <button class="topic-btn" data-topic="muahang" type="button">Hướng dẫn mua hàng</button>
+        <button class="topic-btn" data-topic="thanhtoan" type="button">Hình thức thanh toán</button>
+        <button class="topic-btn" data-topic="tracuu" type="button">Tra cứu đơn hàng</button>
+        <button class="topic-btn" data-topic="faq" type="button">Câu hỏi thường gặp</button>
+      </div>
+
+      <!-- Nội dung từng chủ đề: chỉ chủ đề đang chọn mới hiện -->
+      <div class="topic-content">
+        <article class="topic-panel active" data-topic="baohanh">
+          <h3>Chính sách bảo hành</h3>
+          <ul>
+            <li>Sản phẩm được bảo hành chính hãng theo chính sách của nhà sản xuất.</li>
+            <li>Thời gian bảo hành thông thường là 12 tháng, thời gian cụ thể ghi trên phiếu bảo hành của từng sản phẩm.</li>
+            <li>Không bảo hành khi hư hỏng do rơi vỡ, vào nước hoặc tự ý tháo sửa.</li>
+            <li>Cần bảo hành, hãy gọi hotline 0903 000 000 hoặc gửi tin nhắn ở trang <a href="lienhe.html">Liên hệ</a>.</li>
+          </ul>
+        </article>
+
+        <article class="topic-panel" data-topic="doitra">
+          <h3>Chính sách đổi trả</h3>
+          <ul>
+            <li>Đổi trả trong 7 ngày kể từ ngày nhận hàng nếu sản phẩm lỗi do nhà sản xuất hoặc giao sai mẫu.</li>
+            <li>Sản phẩm cần còn đầy đủ hộp, phụ kiện và phiếu bảo hành.</li>
+            <li>Không áp dụng với sản phẩm đã qua sử dụng hoặc hư hỏng do người dùng.</li>
+            <li>Quạt Shop chịu phí vận chuyển khi lỗi thuộc về cửa hàng.</li>
+          </ul>
+        </article>
+
+        <article class="topic-panel" data-topic="vanchuyen">
+          <h3>Chính sách vận chuyển</h3>
+          <ul>
+            <li>Giao hàng toàn quốc, miễn phí vận chuyển.</li>
+            <li>Dự kiến 1 – 2 ngày với nội thành và 3 – 5 ngày làm việc với các tỉnh khác.</li>
+            <li>Đơn hàng được xác nhận qua điện thoại trước khi giao.</li>
+            <li>Bạn nên kiểm tra sản phẩm ngay khi nhận hàng.</li>
+          </ul>
+        </article>
+
+        <article class="topic-panel" data-topic="baomat">
+          <h3>Chính sách bảo mật</h3>
+          <ul>
+            <li>Chỉ thu thập thông tin cần thiết để xử lý đơn hàng: họ tên, số điện thoại, địa chỉ, email.</li>
+            <li>Không chia sẻ thông tin cho bên thứ ba, trừ đơn vị vận chuyển để giao hàng.</li>
+            <li>Bạn có thể xem và sửa thông tin của mình tại mục <a href="taikhoan.html">Tài khoản</a>.</li>
+          </ul>
+        </article>
+
+        <article class="topic-panel" data-topic="muahang">
+          <h3>Hướng dẫn mua hàng</h3>
+          <ol>
+            <li>Chọn sản phẩm ở mục <a href="sanpham.html">Tất cả sản phẩm</a> hoặc dùng <a href="chonphong.html">Chọn quạt theo phòng</a>.</li>
+            <li>Bấm "Thêm vào giỏ", sau đó vào Giỏ hàng để kiểm tra số lượng.</li>
+            <li>Đăng nhập (hoặc đăng ký) và điền thông tin nhận hàng.</li>
+            <li>Chọn hình thức thanh toán, bấm "Đặt hàng" và ghi lại mã đơn.</li>
+          </ol>
+        </article>
+
+        <article class="topic-panel" data-topic="thanhtoan">
+          <h3>Hình thức thanh toán</h3>
+          <ul>
+            <li><b>Thanh toán khi nhận hàng:</b> trả tiền mặt cho nhân viên giao hàng.</li>
+            <li><b>Chuyển khoản ngân hàng:</b> thông tin tài khoản được gửi khi cửa hàng xác nhận đơn.</li>
+          </ul>
+        </article>
+
+        <article class="topic-panel" data-topic="tracuu">
+          <h3>Tra cứu đơn hàng</h3>
+          <p>Nhập mã đơn (ví dụ DH123456) và số điện thoại đã dùng khi đặt hàng.</p>
+          <form id="track-form" class="track-form">
+            <input id="tk-code" type="text" placeholder="Mã đơn hàng" required>
+            <input id="tk-phone" type="tel" placeholder="Số điện thoại" required>
+            <button type="submit" class="btn-main">Tra cứu</button>
+          </form>
+          <p id="track-result" class="track-result"></p>
+        </article>
+
+        <article class="topic-panel" data-topic="faq">
+          <h3>Câu hỏi thường gặp</h3>
+          <div class="faq">
+            <details><summary>Sản phẩm có được bảo hành không?</summary>
+              <p>Có. Tất cả sản phẩm được bảo hành chính hãng theo chính sách của nhà sản xuất.</p></details>
+            <details><summary>Quạt Shop có giao hàng toàn quốc không?</summary>
+              <p>Có. Bạn đặt hàng trên website, chúng tôi sẽ xác nhận đơn và giao hàng đến địa chỉ bạn cung cấp.</p></details>
+            <details><summary>Làm sao biết quạt nào hợp với phòng của tôi?</summary>
+              <p>Hãy dùng mục <a href="chonphong.html">Chọn quạt theo phòng</a>: chọn loại phòng và diện tích, hệ thống sẽ gợi ý dòng quạt và công suất phù hợp.</p></details>
+            <details><summary>Tôi có thể thanh toán bằng cách nào?</summary>
+              <p>Bạn có thể thanh toán khi nhận hàng hoặc chuyển khoản ngân hàng.</p></details>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KHỐI 8: THÔNG TIN CỬA HÀNG + LIÊN HỆ ===== -->
+  <section class="section">
+    <div class="info-grid">
+      <div class="info"><span>Địa chỉ</span><b>Hưng Yên</b></div>
+      <div class="info"><span>Hotline</span><b>0903 000 000</b></div>
+      <div class="info"><span>Email</span><b>quatshop@example.com</b></div>
+      <div class="info"><span>Giờ làm việc</span><b>08:00 – 18:00</b></div>
+    </div>
+    <div class="cta">
+      <h2>Cần tư vấn thêm?</h2>
+      <p>Đội ngũ Quạt Shop luôn sẵn sàng hỗ trợ bạn chọn được chiếc quạt ưng ý.</p>
+      <a href="lienhe.html" class="btn-main">Liên hệ ngay</a>
+    </div>
+  </section>
+</main>
+
+<!-- ===== KHỐI 9: FOOTER (giống trang chủ) ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+      <p>Cửa hàng quạt dân dụng và công nghiệp chính hãng, giao hàng toàn quốc, bảo hành rõ ràng.</p>
+    </div>
+    <div><h4>Chính sách</h4><ul>
+      <li><a href="gioithieu.html#baohanh">Chính sách bảo hành</a></li><li><a href="gioithieu.html#doitra">Chính sách đổi trả</a></li>
+      <li><a href="gioithieu.html#vanchuyen">Chính sách vận chuyển</a></li><li><a href="gioithieu.html#baomat">Chính sách bảo mật</a></li></ul></div>
+    <div><h4>Hỗ trợ khách hàng</h4><ul>
+      <li><a href="gioithieu.html#muahang">Hướng dẫn mua hàng</a></li><li><a href="gioithieu.html#thanhtoan">Hình thức thanh toán</a></li>
+      <li><a href="gioithieu.html#tracuu">Tra cứu đơn hàng</a></li><li><a href="gioithieu.html#faq">Câu hỏi thường gặp</a></li></ul></div>
+    <div><h4>Liên hệ</h4><ul>
+      <li>Hotline: 0903 000 000</li><li>Email: quatshop@example.com</li><li>Địa chỉ: Hưng Yên</li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Quạt Shop – Đồ án 2, Trường ĐH Sư phạm Kỹ thuật Hưng Yên. Sinh viên: Đỗ Văn Trọng</p>
+  </div>
+</footer>
+
+<!-- Thứ tự quan trọng: chung.js phải đứng TRƯỚC gioithieu.js -->
+<script src="../jss/chung.js"></script>
+<script src="../jss/gioithieu.js"></script>
+</body>
+</html>

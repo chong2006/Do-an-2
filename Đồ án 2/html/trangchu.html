@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quạt Shop - Quạt dân dụng, quạt công nghiệp chính hãng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/trangchu.css">
+</head>
+<body>
+
+<!-- ===== KHỐI 1: THANH THÔNG TIN TRÊN CÙNG ===== -->
+<div class="topbar">
+  <div class="container">
+    <span>Hotline <b>0903 000 000</b> · 08:00–18:00</span>
+    <span>Giao hàng toàn quốc · Bảo hành chính hãng</span>
+  </div>
+</div>
+
+<!-- ===== KHỐI 2: HEADER (logo, tìm kiếm, tài khoản, giỏ hàng) ===== -->
+<header class="header">
+  <div class="container header-row">
+    <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+
+    <form id="search-form" class="search">
+      <input id="search-input" type="text" placeholder="Bạn muốn tìm quạt gì...">
+      <button type="submit">Tìm</button>
+    </form>
+
+    <a href="taikhoan.html" class="btn-outline">Tài khoản</a>
+        <a href="giohang.html" class="btn-cart">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+  </div>
+
+  <!-- Thanh menu -->
+  <div class="container nav-row">
+    <div class="cat-wrap">
+      <button id="cat-toggle" class="cat-btn">☰ Danh mục sản phẩm</button>
+      <ul id="cat-menu" class="cat-menu"></ul>
+    </div>
+    <nav class="nav">
+      <a href="trangchu.html" class="active">Trang chủ</a>
+      <a href="sanpham.html">Tất cả sản phẩm</a>
+      <a href="chonphong.html">Chọn quạt theo phòng</a>
+      <a href="lienhe.html">Liên hệ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+      
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ===== KHỐI 3: BANNER (1 ô lớn + 2 ô nhỏ) ===== -->
+  <section class="hero">
+    <article class="hero-main">
+      <p class="hero-tag">Giải pháp làm mát gia đình</p>
+      <h1>Quạt dân dụng</h1>
+      <p>Mát mẻ mỗi ngày cho phòng khách, phòng ngủ và không gian sinh hoạt.</p>
+      <a href="sanpham.html" class="btn-main">Khám phá ngay</a>
+      <ul class="chips">
+        <li>Gió êm</li><li>Tiết kiệm điện</li><li>Kiểu dáng đẹp</li>
+      </ul>
+      <div class="hero-fan" id="hero-fan"></div>
+    </article>
+
+    <article class="hero-side dark">
+      <h2>Quạt công nghiệp</h2>
+      <p>Lưu lượng gió lớn cho nhà xưởng, kho bãi.</p>
+      <a href="sanpham.html?cat=cat5" class="btn-main small">Khám phá ngay</a>
+    </article>
+
+    <article class="hero-side green">
+      <p class="hero-tag">Gợi ý nhanh</p>
+      <h2>Chọn quạt theo nhu cầu sử dụng</h2>
+      <a href="chonphong.html" class="link-more">Chọn theo phòng</a>
+    </article>
+  </section>
+
+  <!-- ===== KHỐI 4: DANH MỤC SẢN PHẨM (JS tự đổ dữ liệu) ===== -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Danh mục sản phẩm</h2>
+      <a href="sanpham.html" class="link-more">Xem toàn bộ</a>
+    </div>
+    <div id="category-list" class="cat-grid"></div>
+  </section>
+
+  <!-- ===== KHỐI 5: SẢN PHẨM NỔI BẬT (JS tự đổ dữ liệu) ===== -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Sản phẩm nổi bật</h2>
+      <a href="sanpham.html" class="link-more">Xem toàn bộ</a>
+    </div>
+    <div id="product-list" class="product-grid"></div>
+  </section>
+  
+  <!-- ===== KHỐI 6: GIẢI PHÁP THEO NHU CẦU ===== -->
+  <section class="section">
+    <p class="eyebrow">Chọn đúng theo nhu cầu</p>
+    <h2 class="section-title">Giải pháp theo nhu cầu</h2>
+    <div class="solution">
+      <a href="sanpham.html?cat=cat1" class="sol sol-home">
+        <h3>Làm mát gia đình</h3>
+        <p>Chọn quạt phù hợp từng không gian sống</p>
+      </a>
+      <a href="sanpham.html?cat=cat5" class="sol sol-factory">
+        <h3>Thông gió nhà xưởng</h3>
+        <p>Giải pháp lưu thông không khí cho công trình</p>
+      </a>
+      <a href="lienhe.html" class="sol sol-advice">
+        <h3>Tư vấn sản phẩm</h3>
+        <p>Liên hệ đội ngũ kỹ thuật trước khi mua</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== KHỐI 7: THƯƠNG HIỆU NỔI BẬT (JS tự đổ dữ liệu) ===== -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Thương hiệu nổi bật</h2>
+      <a href="sanpham.html" class="link-more">Xem tất cả</a>
+    </div>
+    <div id="brand-list" class="brand-row"></div>
+  </section>
+</main>
+
+<!-- ===== KHỐI 8: FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+      <p>Cửa hàng quạt dân dụng và công nghiệp chính hãng, giao hàng toàn quốc, bảo hành rõ ràng.</p>
+    </div>
+    <div>
+      <h4>Chính sách</h4>
+      <ul>
+        <li><a href="gioithieu.html#baohanh">Chính sách bảo hành</a></li>
+        <li><a href="gioithieu.html#doitra">Chính sách đổi trả</a></li>
+        <li><a href="gioithieu.html#vanchuyen">Chính sách vận chuyển</a></li>
+        <li><a href="gioithieu.html#baomat">Chính sách bảo mật</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hỗ trợ khách hàng</h4>
+      <ul>
+        <li><a href="gioithieu.html#muahang">Hướng dẫn mua hàng</a></li>
+        <li><a href="gioithieu.html#thanhtoan">Hình thức thanh toán</a></li>
+        <li><a href="gioithieu.html#tracuu">Tra cứu đơn hàng</a></li>
+        <li><a href="gioithieu.html#faq">Câu hỏi thường gặp</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Liên hệ</h4>
+      <ul>
+        <li>Hotline: 0903 000 000</li>
+        <li>Email: quatshop@example.com</li>
+        <li>Địa chỉ: Hưng Yên</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Quạt Shop – Đồ án 2, Trường ĐH Sư phạm Kỹ thuật Hưng Yên. Sinh viên: Đỗ Văn Trọng</p>
+  </div>
+</footer>
+
+<!-- File JavaScript của trang chủ -->
+<script src="../jss/trangchu.js"></script>
+</body>
+</html>

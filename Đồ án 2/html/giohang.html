@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng - Quạt Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- trangchu.css chứa phần dùng chung (reset, header, footer); giohang.css chỉ chứa phần riêng -->
+  <link rel="stylesheet" href="../css/trangchu.css">
+  <link rel="stylesheet" href="../css/giohang.css">
+</head>
+<body>
+
+<!-- ===== KHỐI 1: HEADER (giống trang chủ) ===== -->
+<header class="header">
+  <div class="container header-row">
+    <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+    <form id="search-form" class="search">
+      <input id="search-input" type="text" placeholder="Bạn muốn tìm quạt gì...">
+      <button type="submit">Tìm</button>
+    </form>
+    <a href="taikhoan.html" id="account-btn" class="btn-outline">Tài khoản</a>
+    <a href="giohang.html" class="btn-cart">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+  </div>
+  <div class="container nav-row">
+    <div class="cat-wrap">
+      <button id="cat-toggle" class="cat-btn">☰ Danh mục sản phẩm</button>
+      <ul id="cat-menu" class="cat-menu"></ul>
+    </div>
+    <nav class="nav">
+      <a href="trangchu.html">Trang chủ</a>
+      <a href="sanpham.html">Tất cả sản phẩm</a>
+      <a href="chonphong.html">Chọn quạt theo phòng</a>
+      <a href="lienhe.html">Liên hệ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container cart-page">
+  <h1 class="page-title">Giỏ hàng của bạn</h1>
+
+  <!-- ===== KHỐI 2: GIỎ HÀNG TRỐNG ===== -->
+  <section id="cart-empty" class="panel center hidden">
+    <p>Giỏ hàng đang trống.</p>
+    <a href="trangchu.html" class="btn-main">Tiếp tục mua sắm</a>
+  </section>
+
+  <!-- ===== KHỐI 3: GIỎ HÀNG CÓ SẢN PHẨM (danh sách + form đặt hàng) ===== -->
+  <div id="cart-content" class="cart-layout hidden">
+    <section class="panel">
+      <div id="cart-items"></div>
+      <button id="clear-cart" class="link-btn" type="button">Xóa toàn bộ giỏ hàng</button>
+    </section>
+
+    <aside class="panel">
+      <h2>Thông tin đặt hàng</h2>
+      <form id="checkout-form" class="cart-form">
+        <label>Họ tên người nhận <input id="co-name" type="text" required></label>
+        <label>Số điện thoại <input id="co-phone" type="tel" required></label>
+        <label>Địa chỉ giao hàng <input id="co-address" type="text" required></label>
+        <label>Ghi chú (không bắt buộc) <input id="co-note" type="text"></label>
+
+        <div class="pay">
+          <label><input type="radio" name="payment" value="Thanh toán khi nhận hàng" checked> Thanh toán khi nhận hàng</label>
+          <label><input type="radio" name="payment" value="Chuyển khoản ngân hàng"> Chuyển khoản ngân hàng</label>
+        </div>
+
+        <div class="sum-row"><span>Tạm tính</span><b id="sum-sub">0đ</b></div>
+        <div class="sum-row"><span>Phí vận chuyển</span><b>Miễn phí</b></div>
+        <div class="sum-row total"><span>Tổng cộng</span><b id="sum-total">0đ</b></div>
+
+        <p id="co-msg" class="msg"></p>
+        <button type="submit" class="btn-main">Đặt hàng</button>
+        <p class="hint">Cần đăng nhập để đặt hàng. <a href="taikhoan.html">Đăng nhập / Đăng ký</a></p>
+      </form>
+    </aside>
+  </div>
+
+  <!-- ===== KHỐI 4: ĐẶT HÀNG THÀNH CÔNG ===== -->
+  <section id="order-done" class="panel center hidden">
+    <h2>Đặt hàng thành công!</h2>
+    <p>Mã đơn hàng của bạn: <b id="order-id"></b></p>
+    <a href="trangchu.html" class="btn-main">Về trang chủ</a>
+  </section>
+</main>
+
+<!-- ===== KHỐI 5: FOOTER (giống trang chủ) ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+      <p>Cửa hàng quạt dân dụng và công nghiệp chính hãng, giao hàng toàn quốc, bảo hành rõ ràng.</p>
+    </div>
+    <div><h4>Chính sách</h4><ul>
+      <li><a href="gioithieu.html#baohanh">Chính sách bảo hành</a></li><li><a href="gioithieu.html#doitra">Chính sách đổi trả</a></li>
+      <li><a href="gioithieu.html#vanchuyen">Chính sách vận chuyển</a></li><li><a href="gioithieu.html#baomat">Chính sách bảo mật</a></li></ul></div>
+    <div><h4>Hỗ trợ khách hàng</h4><ul>
+      <li><a href="gioithieu.html#muahang">Hướng dẫn mua hàng</a></li><li><a href="gioithieu.html#thanhtoan">Hình thức thanh toán</a></li>
+      <li><a href="gioithieu.html#tracuu">Tra cứu đơn hàng</a></li><li><a href="gioithieu.html#faq">Câu hỏi thường gặp</a></li></ul></div>
+    <div><h4>Liên hệ</h4><ul>
+      <li>Hotline: 0903 000 000</li><li>Email: quatshop@example.com</li><li>Địa chỉ: Hưng Yên</li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Quạt Shop – Đồ án 2, Trường ĐH Sư phạm Kỹ thuật Hưng Yên. Sinh viên: Đỗ Văn Trọng</p>
+  </div>
+</footer>
+
+<!-- Thứ tự quan trọng: chung.js phải đứng TRƯỚC giohang.js -->
+<script src="../jss/chung.js"></script>
+<script src="../jss/giohang.js"></script>
+</body>
+</html>

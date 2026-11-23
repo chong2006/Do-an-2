@@ -1,0 +1,39 @@
+/* ===== KHỐI 1: CHUNG CHO TRANG SẢN PHẨM ===== */
+.hidden { display: none !important; }
+.shop-page { padding-top: 32px; }
+.shop-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.page-title { font-size: 32px; color: var(--green-900); }
+.muted { color: var(--muted); font-size: 14px; }
+.sort { font-weight: 500; font-size: 14px; }
+.sort select { margin-left: 6px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font: inherit; background: #fff; }
+.shop-layout { display: grid; grid-template-columns: 250px 1fr; gap: 24px; align-items: start; }
+
+/* ===== KHỐI 2: BỘ LỌC ===== */
+.filters { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; position: sticky; top: 150px; }
+.filter-group { margin-bottom: 20px; }
+.filter-group h3 { font-size: 15px; margin-bottom: 10px; color: var(--green-900); }
+.opt { width: 100%; text-align: left; border: 0; background: transparent; padding: 8px 10px; border-radius: 8px; font: inherit; color: var(--ink); cursor: pointer; }
+.opt:hover { background: var(--green-100); }
+.opt.active { background: var(--green-700); color: #fff; font-weight: 700; }
+.btn-reset { width: 100%; padding: 10px; border: 1px solid var(--line); background: #fff; border-radius: 8px; font: inherit; font-weight: 700; cursor: pointer; }
+.btn-reset:hover { border-color: var(--green-700); color: var(--green-700); }
+
+/* ===== KHỐI 3: DANH SÁCH SẢN PHẨM (thẻ .product dùng lại từ trangchu.css) ===== */
+.results .product-grid { grid-template-columns: repeat(3, 1fr); }
+.product .thumb { display: block; }
+.product h3 a:hover { color: var(--green-700); }
+.empty { text-align: center; padding: 48px 16px; color: var(--muted); background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+
+/* ===== KHỐI 4: THÔNG BÁO NHỎ ===== */
+.toast { position: fixed; right: 24px; bottom: 24px; z-index: 50; background: var(--green-900); color: #fff; padding: 12px 20px; border-radius: 10px; opacity: 0; transform: translateY(10px); transition: .25s; pointer-events: none; }
+.toast.show { opacity: 1; transform: none; }
+
+/* ===== KHỐI 5: RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .shop-layout { grid-template-columns: 1fr; }
+  .filters { position: static; }
+  .results .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .results .product-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - Quạt Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- trangchu.css chứa phần dùng chung (reset, header, footer); lienhe.css chỉ chứa phần riêng -->
+  <link rel="stylesheet" href="../css/trangchu.css">
+  <link rel="stylesheet" href="../css/lienhe.css">
+</head>
+<body>
+
+<!-- ===== KHỐI 1: HEADER (giống trang chủ) ===== -->
+<header class="header">
+  <div class="container header-row">
+    <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+    <form id="search-form" class="search">
+      <input id="search-input" type="text" placeholder="Bạn muốn tìm quạt gì...">
+      <button type="submit">Tìm</button>
+    </form>
+    <a href="taikhoan.html" id="account-btn" class="btn-outline">Tài khoản</a>
+    <a href="giohang.html" class="btn-cart">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+  </div>
+  <div class="container nav-row">
+    <div class="cat-wrap">
+      <button id="cat-toggle" class="cat-btn">☰ Danh mục sản phẩm</button>
+      <ul id="cat-menu" class="cat-menu"></ul>
+    </div>
+    <nav class="nav">
+      <a href="trangchu.html">Trang chủ</a>
+      <a href="sanpham.html">Tất cả sản phẩm</a>
+      <a href="chonphong.html">Chọn quạt theo phòng</a>
+            <a href="lienhe.html" class="active">Liên hệ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container contact-page">
+  <h1 class="page-title">Liên hệ với Quạt Shop</h1>
+  <p class="muted">Bạn cần tư vấn chọn quạt, hỏi về đơn hàng hoặc bảo hành? Hãy gửi tin nhắn, chúng tôi sẽ phản hồi sớm.</p>
+
+  <div class="contact-layout">
+
+    <!-- ===== KHỐI 2: THÔNG TIN LIÊN HỆ ===== -->
+    <aside class="contact-info">
+      <div class="info"><span>Hotline</span><b>0903 000 000</b></div>
+      <div class="info"><span>Email</span><b>quatshop@example.com</b></div>
+      <div class="info"><span>Địa chỉ</span><b>Hưng Yên</b></div>
+      <div class="info"><span>Giờ làm việc</span><b>08:00 – 18:00 mỗi ngày</b></div>
+      <p class="tip">Chưa biết nên mua quạt nào? Hãy thử <a href="chonphong.html">Chọn quạt theo phòng</a> trước khi liên hệ.</p>
+    </aside>
+
+    <!-- ===== KHỐI 3: FORM GỬI LIÊN HỆ ===== -->
+    <section class="contact-card">
+      <form id="contact-form" class="cform">
+        <div class="row2">
+          <label>Họ và tên <input id="ct-name" type="text" required></label>
+          <label>Số điện thoại <input id="ct-phone" type="tel" required></label>
+        </div>
+        <label>Email <input id="ct-email" type="email" required></label>
+        <label>Chủ đề
+          <select id="ct-topic">
+            <option>Tư vấn chọn quạt</option>
+            <option>Hỏi về đơn hàng</option>
+            <option>Bảo hành, đổi trả</option>
+            <option>Góp ý khác</option>
+          </select>
+        </label>
+        <label>Nội dung <textarea id="ct-message" rows="5" maxlength="500" required></textarea></label>
+        <p class="counter"><span id="ct-count">0</span>/500 ký tự</p>
+        <p id="ct-msg" class="msg"></p>
+        <button type="submit" class="btn-main">Gửi liên hệ</button>
+      </form>
+
+      <!-- Hiện sau khi gửi thành công -->
+      <div id="sent-box" class="sent hidden">
+        <h2>Đã gửi liên hệ!</h2>
+        <p>Cảm ơn bạn. Quạt Shop sẽ phản hồi qua email hoặc số điện thoại bạn đã cung cấp.</p>
+        <button id="again-btn" class="btn-main" type="button">Gửi tin nhắn khác</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ===== KHỐI 4: FOOTER (giống trang chủ) ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="trangchu.html" class="logo">Quạt<span>Shop</span></a>
+      <p>Cửa hàng quạt dân dụng và công nghiệp chính hãng, giao hàng toàn quốc, bảo hành rõ ràng.</p>
+    </div>
+    <div><h4>Chính sách</h4><ul>
+      <li><a href="gioithieu.html#baohanh">Chính sách bảo hành</a></li><li><a href="gioithieu.html#doitra">Chính sách đổi trả</a></li>
+      <li><a href="gioithieu.html#vanchuyen">Chính sách vận chuyển</a></li><li><a href="gioithieu.html#baomat">Chính sách bảo mật</a></li></ul></div>
+    <div><h4>Hỗ trợ khách hàng</h4><ul>
+      <li><a href="gioithieu.html#muahang">Hướng dẫn mua hàng</a></li><li><a href="gioithieu.html#thanhtoan">Hình thức thanh toán</a></li>
+      <li><a href="gioithieu.html#tracuu">Tra cứu đơn hàng</a></li><li><a href="gioithieu.html#faq">Câu hỏi thường gặp</a></li></ul></div>
+    <div><h4>Liên hệ</h4><ul>
+      <li>Hotline: 0903 000 000</li><li>Email: quatshop@example.com</li><li>Địa chỉ: Hưng Yên</li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Quạt Shop – Đồ án 2, Trường ĐH Sư phạm Kỹ thuật Hưng Yên. Sinh viên: Đỗ Văn Trọng</p>
+  </div>
+</footer>
+
+<!-- Thứ tự quan trọng: chung.js phải đứng TRƯỚC lienhe.js -->
+<script src="../jss/chung.js"></script>
+<script src="../jss/lienhe.js"></script>
+</body>
+</html>

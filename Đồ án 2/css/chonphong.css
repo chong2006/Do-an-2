@@ -1,0 +1,46 @@
+/* ===== KHỐI 1: CHUNG ===== */
+.hidden { display: none !important; }
+.room-page { padding-top: 32px; }
+.page-title { font-size: 32px; color: var(--green-900); }
+.muted { color: var(--muted); margin-top: 4px; }
+.step { margin-top: 32px; }
+.step h2 { display: flex; align-items: center; gap: 10px; font-size: 20px; margin-bottom: 16px; }
+.num { width: 30px; height: 30px; border-radius: 50%; background: var(--green-700); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; }
+
+/* ===== KHỐI 2: CHỌN PHÒNG ===== */
+.room-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.room { text-align: left; background: #fff; border: 2px solid var(--line); border-radius: 14px; padding: 18px; font: inherit; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
+.room b { font-size: 17px; color: var(--green-900); }
+.room span { font-size: 14px; color: var(--muted); }
+.room:hover { border-color: var(--green-700); }
+.room.active { border-color: var(--green-700); background: var(--green-100); }
+
+/* ===== KHỐI 3: CHỌN DIỆN TÍCH ===== */
+.area-box { display: flex; align-items: center; gap: 20px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.area-box input { flex: 1; accent-color: var(--green-700); }
+.area-val { min-width: 90px; text-align: right; font-size: 18px; }
+.area-val b { font-size: 28px; color: var(--green-700); }
+
+/* ===== KHỐI 4: LỜI KHUYÊN ===== */
+.advice { margin-top: 24px; background: var(--green-100); border-left: 5px solid var(--green-700); border-radius: 12px; padding: 18px 22px; }
+.advice h3 { color: var(--green-900); margin-bottom: 6px; }
+.advice p { margin-bottom: 4px; }
+#advice-power { font-weight: 700; color: var(--green-700); }
+
+/* ===== KHỐI 5: SẢN PHẨM GỢI Ý (thẻ .product dùng lại từ trangchu.css) ===== */
+.hint-box { text-align: center; padding: 40px 16px; color: var(--muted); background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.product .thumb { display: block; }
+.product h3 a:hover { color: var(--green-700); }
+.tag { align-self: flex-start; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 99px; margin-bottom: 8px; }
+.tag.fit { background: var(--green-700); color: #fff; }
+.tag.ref { background: var(--line); color: var(--muted); }
+.toast { position: fixed; right: 24px; bottom: 24px; z-index: 50; background: var(--green-900); color: #fff; padding: 12px 20px; border-radius: 10px; opacity: 0; transform: translateY(10px); transition: .25s; pointer-events: none; }
+.toast.show { opacity: 1; transform: none; }
+
+/* ===== KHỐI 6: RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .room-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .room-grid { grid-template-columns: 1fr; }
+}
